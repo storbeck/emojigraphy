@@ -2,6 +2,9 @@
 
 This project allows you to store text messages in images and upload them to Discord as emojis for cloud storage. You can encode a message in an image, and later, decode and retrieve the hidden message from the image.
 
+<img width="1401" alt="Screenshot 2024-01-11 at 7 01 33 AM" src="https://github.com/storbeck/emojigraphy/assets/449874/32cc66cb-dd1a-48fc-9ea1-e84c3fc1d895">
+
+
 ## Prerequisites
 
 Before you begin, ensure you have the following prerequisites installed on your system:
