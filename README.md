@@ -45,21 +45,36 @@ node index.js encode --sourceImagePath images/in/facepalm.png --message "Hello, 
 
 ### Decoding a Message
 
-To decode a message from an encoded image, use the following command:
+To decode a message from an encoded image, follow these steps:
 
-```bash
-node index.js decode --imagePath <imagePath>
-```
+1. Open Discord and go to the server where the encoded emoji is located.
 
-- `<imagePath>`: Path to the image with the hidden message.
+2. Click on the emoji to open it in a preview window.
+
+3. Right-click on the image in the preview window and choose "Copy Image Address." The copied URL should resemble this format: "https://cdn.discordapp.com/emojis/EMOJI_ID.webp" (Replace EMOJI_ID with the actual emoji ID). To ensure compatibility with the decoding process, rename the file extension from .webp to .png after copying the URL and remove any additional parameters.
+
+4. Use `curl` or your preferred method to download the image to your local machine:
+
+   ```bash
+   curl -O https://cdn.discordapp.com/emojis/EMOJI_ID.png
+   ```
+
+5. Run the following command to decode the hidden message from the downloaded image:
+
+   ```bash
+   node index.js decode --imagePath EMOJI_ID.png
+   ```
+
+   The decoded message will be displayed in the terminal.
 
 Example:
 
 ```bash
-node index.js decode --imagePath images/out/encoded_facepalm.png
+curl -O https://cdn.discordapp.com/emojis/1194975403266297865.png
+node index.js decode --imagePath 1194975403266297865.png
 ```
 
-The decoded message will be displayed in the terminal.
+The decoded message will be shown in the terminal.
 
 ### Uploading Emojis to Discord
 
@@ -88,7 +103,3 @@ Now, you can use the uploaded emoji with the hidden message in your Discord serv
 ## Contributing
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
